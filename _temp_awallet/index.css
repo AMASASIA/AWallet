@@ -1,0 +1,61 @@
+/* Obsidian Theme Colors */
+:root {
+  --color-bg-base: #0a0a0a;
+  --color-card-bg: #141414;
+  --color-text-base: #e0e0e0;
+  --color-text-muted: #a0a0a0;
+  --color-text-muted-more: #666666;
+  --color-emerald: #10b981;
+  --color-indigo: #6366f1;
+  --color-border: #262626;
+
+  /* Glassmorphism Effect */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur: blur(10px);
+}
+
+/* Custom Card Styles */
+.a-wallet-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 24px;
+  color: var(--color-text-base);
+}
+
+/* Holographic Glow Effect */
+.holographic-glow {
+  position: relative;
+  color: var(--color-text-base);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1),
+               0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+/* Animations */
+@keyframes pulse-emerald {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-emerald {
+  animation: pulse-emerald 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

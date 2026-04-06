@@ -1,0 +1,43 @@
+{
+  "@context": "https://w3id.org/did-resolution/v1",
+  "didDocument": {
+    "id": "did:ion:EiDn8FTljYoN6DjEyzRpX_-gp28s9vbLJfr3lnSF313ieg",
+    "@context": [
+      "https://www.w3.org/ns/did/v1",
+      {
+        "@base": "did:ion:EiDn8FTljYoN6DjEyzRpX_-gp28s9vbLJfr3lnSF313ieg"
+      }
+    ],
+    "service": [
+      {
+        "id": "#idq",
+        "type": "LinkedDomains",
+        "serviceEndpoint": "http://example/"
+      }
+    ],
+    "verificationMethod": [
+      {
+        "id": "#key-1",
+        "controller": "did:ion:EiDn8FTljYoN6DjEyzRpX_-gp28s9vbLJfr3lnSF313ieg",
+        "type": "EcdsaSecp256k1VerificationKey2019",
+        "publicKeyJwk": {
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "sltllStAdGwc1dlvyre006IB8Xo7gDYbQ7rk-8Z6-9o",
+          "y": "by2ol8PT1F1eg3Tt--nut4Z7JWOt_Aywx1FoB2bD9zY"
+        }
+      }
+    ],
+    "authentication": [
+      "#key-1"
+    ]
+  },
+  "didDocumentMetadata": {
+    "method": {
+      "published": false,
+      "recoveryCommitment": "EiAoTWHFHm_pdJPvvidUyRvYfOZQABgChRkxgot8IED_tQ",
+      "updateCommitment": "EiAHKN7b9L5in0JHI2-3T0dzyyda5D2QPSmJJXIlwuj7Ow"
+    },
+    "canonicalId": "did:ion:EiDn8FTljYoN6DjEyzRpX_-gp28s9vbLJfr3lnSF313ieg"
+  }
+}

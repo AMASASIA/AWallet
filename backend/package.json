@@ -1,0 +1,30 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "truffle-config.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "npx truffle test",
+        "compile": "npx truffle compile",
+        "build": "npx truffle build",
+        "deploy:goerli": "npx truffle migrate --network goerli --reset",
+        "deploy:mumbai": "npx truffle migrate --network mumbai --reset",
+        "verify:goerli": "npx truffle run verify WalletFactoryV4 --network goerli && npx truffle run verify MyToken --network goerli",
+        "verify:mumbai": "npx truffle run verify WalletFactoryV4 --network mumbai && npx truffle run verify MyToken --network mumbai"
+    },
+    "keywords": [],
+    "author": "IDQWallet",
+    "license": "MIT",
+    "devDependencies": {
+        "@truffle/hdwallet-provider": "^2.1.13",
+        "dotenv": "^16.3.1"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.9.3",
+        "truffle-assertions": "^0.9.2",
+        "truffle-plugin-verify": "^0.6.5"
+    }
+}

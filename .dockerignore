@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+.npm
+frontend/node_modules
+api/node_modules
+frontend/build
+api/public
+_temp_awallet

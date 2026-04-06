@@ -1,0 +1,837 @@
+/* ============================================================
+   Invisible Finance — AWallet Agent Dashboard
+   AI Studio App UI/UX を AWallet に統合するためのスタイルシート
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* === Root Variables === */
+:root {
+  --if-bg: #000000;
+  --if-card: #1c1c1e;
+  --if-card-hover: #2c2c2e;
+  --if-border: rgba(255, 255, 255, 0.05);
+  --if-border-hover: rgba(255, 255, 255, 0.1);
+  --if-text: #ffffff;
+  --if-text-secondary: #9ca3af;
+  --if-text-muted: #6b7280;
+  --if-accent: #10b981;
+  --if-accent-dim: rgba(16, 185, 129, 0.2);
+  --if-indigo: #6366f1;
+  --if-indigo-dim: rgba(99, 102, 241, 0.2);
+  --if-amber: #f59e0b;
+  --if-danger: #ef4444;
+  --if-radius: 24px;
+  --if-radius-sm: 16px;
+  --if-radius-xs: 12px;
+  --if-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* === Layout Container === */
+.if-container {
+  min-height: 100vh;
+  background: var(--if-bg);
+  color: var(--if-text);
+  font-family: var(--if-font);
+  display: flex;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Sidebar === */
+.if-sidebar {
+  width: 260px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--if-border);
+  background: var(--if-bg);
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.if-sidebar-logo {
+  margin-bottom: 48px;
+  padding-left: 8px;
+}
+
+.if-sidebar-logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.if-sidebar-logo .if-logo-sub {
+  font-size: 11px;
+  color: var(--if-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* === Nav Items === */
+.if-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.if-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: var(--if-radius-xs);
+  cursor: pointer;
+  color: var(--if-text-muted);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.if-nav-item:hover {
+  color: var(--if-text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.if-nav-item.active {
+  color: var(--if-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.if-nav-item .if-nav-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.if-nav-item.active .if-nav-icon {
+  opacity: 1;
+}
+
+/* === Main Content === */
+.if-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: var(--if-bg);
+}
+
+/* === Header === */
+.if-header {
+  padding: 32px 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.if-header h2 {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.if-header p {
+  font-size: 18px;
+  color: var(--if-text-secondary);
+  margin: 0;
+}
+
+.if-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.if-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--if-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.if-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--if-text);
+}
+
+/* === Dashboard Grid === */
+.if-dashboard {
+  flex: 1;
+  padding: 24px 32px 32px;
+  display: flex;
+  gap: 32px;
+  overflow-y: auto;
+}
+
+.if-col-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.if-col-right {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* === Section Label === */
+.if-section-label {
+  color: var(--if-accent);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+/* === OKE Card === */
+.if-oke-card {
+  background: var(--if-card);
+  color: var(--if-text);
+  padding: 24px;
+  border-radius: var(--if-radius);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.if-oke-card .if-oke-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 128px;
+  height: 128px;
+  background: var(--if-indigo-dim);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.if-oke-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.if-oke-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.if-oke-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.if-oke-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.if-oke-label {
+  font-size: 10px;
+  color: var(--if-text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.if-verified-badge {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: monospace;
+  color: var(--if-accent);
+}
+
+.if-oke-points {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.if-oke-points .if-unit {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--if-text-muted);
+  margin-left: 4px;
+}
+
+.if-oke-trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--if-accent);
+  font-weight: 500;
+}
+
+.if-oke-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.if-oke-stat-label {
+  font-size: 10px;
+  color: var(--if-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.if-oke-plurality {
+  font-size: 20px;
+  font-family: monospace;
+  color: #a5b4fc;
+}
+
+/* === Wallet Balance Card === */
+.if-balance-card {
+  background: var(--if-card);
+  padding: 24px;
+  border-radius: var(--if-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.if-balance-card .if-balance-glow {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.if-balance-amount {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.if-balance-currency {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--if-text-muted);
+  margin-left: 6px;
+}
+
+.if-balance-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.if-balance-sub {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--if-radius-xs);
+}
+
+.if-balance-sub-label {
+  font-size: 10px;
+  color: var(--if-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.if-balance-sub-value {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+/* === Task Card === */
+.if-task-card {
+  background: var(--if-card);
+  padding: 16px;
+  border-radius: var(--if-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.if-task-card:hover {
+  background: var(--if-card-hover);
+  border-color: var(--if-border-hover);
+}
+
+.if-task-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.if-task-card:hover .if-task-icon {
+  transform: scale(1.1);
+}
+
+.if-task-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.if-task-title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.if-task-subtitle {
+  font-size: 13px;
+  color: var(--if-text-muted);
+  margin-top: 2px;
+}
+
+.if-task-badge {
+  font-size: 11px;
+  color: var(--if-text-muted);
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* === Consent Card Overlay === */
+.if-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  animation: if-fadein 0.2s ease;
+}
+
+@keyframes if-fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes if-scalein {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* === Consent Card === */
+.if-consent-card {
+  width: 360px;
+  padding: 28px;
+  border-radius: var(--if-radius);
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  font-family: var(--if-font);
+  position: relative;
+  overflow: hidden;
+  animation: if-scalein 0.2s ease;
+  color: #111;
+}
+
+.if-consent-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.if-consent-close:hover {
+  color: #666;
+}
+
+.if-consent-agent {
+  font-size: 11px;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.if-consent-summary {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* === Decision Buttons === */
+.if-decision-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.if-decision-btn {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: var(--if-radius-xs);
+  border: none;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--if-font);
+}
+
+.if-decision-btn:hover {
+  background: #e5e7eb;
+}
+
+.if-decision-btn.primary {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.if-decision-btn.primary:hover {
+  background: #222;
+}
+
+/* === Swipe to Confirm === */
+.if-swipe-track {
+  position: relative;
+  height: 52px;
+  border-radius: 26px;
+  background: #f3f4f6;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  margin-top: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.if-swipe-track:active {
+  cursor: grabbing;
+}
+
+.if-swipe-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--if-accent);
+  transition: width 0.08s linear;
+  border-radius: 26px 0 0 26px;
+}
+
+.if-swipe-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 52px;
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.if-swipe-handle {
+  position: absolute;
+  top: 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: left 0.08s linear;
+  border: 1px solid #e5e7eb;
+}
+
+/* === Processing Spinner === */
+.if-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: if-spin 0.8s linear infinite;
+}
+
+@keyframes if-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === Action Buttons Grid === */
+.if-actions-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.if-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--if-radius-xs);
+  border: 1px solid var(--if-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--if-text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--if-font);
+}
+
+.if-action-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--if-border-hover);
+}
+
+.if-action-btn.accent {
+  background: var(--if-accent-dim);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--if-accent);
+}
+
+.if-action-btn.accent:hover {
+  background: rgba(16, 185, 129, 0.3);
+}
+
+.if-action-btn.danger {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--if-danger);
+}
+
+/* === Transaction Log Table === */
+.if-tx-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.if-tx-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--if-text-muted);
+  border-bottom: 1px solid var(--if-border);
+  font-weight: 600;
+}
+
+.if-tx-table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  color: var(--if-text-secondary);
+}
+
+.if-tx-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.if-tx-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.if-tx-badge.payment { background: rgba(16, 185, 129, 0.1); color: var(--if-accent); }
+.if-tx-badge.investment { background: rgba(99, 102, 241, 0.1); color: var(--if-indigo); }
+.if-tx-badge.escrow { background: rgba(245, 158, 11, 0.1); color: var(--if-amber); }
+.if-tx-badge.blocked { background: rgba(239, 68, 68, 0.1); color: var(--if-danger); }
+.if-tx-badge.data { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+/* === Empty State === */
+.if-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--if-text-muted);
+  font-size: 14px;
+}
+
+/* === FAB === */
+.if-fab {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: var(--if-accent);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #000;
+  z-index: 10;
+}
+
+.if-fab:hover {
+  transform: scale(1.08);
+}
+
+/* === Policy Card === */
+.if-policy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.if-policy-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--if-border);
+  padding: 16px;
+  border-radius: var(--if-radius-sm);
+}
+
+.if-policy-item .if-policy-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.if-policy-item .if-policy-label {
+  font-size: 11px;
+  color: var(--if-text-muted);
+}
+
+.if-policy-item .if-policy-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* === Chat Mockup === */
+.if-chat-mockup {
+  background: var(--if-card);
+  border-radius: var(--if-radius);
+  padding: 24px;
+  opacity: 0.6;
+}
+
+.if-chat-bubble {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 16px 16px 16px 4px;
+  font-size: 14px;
+  color: var(--if-text-secondary);
+  max-width: 75%;
+  line-height: 1.5;
+}
+
+/* === Tab Bar === */
+.if-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--if-border);
+  padding: 0 24px;
+}
+
+.if-tab {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--if-text-muted);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  font-family: var(--if-font);
+}
+
+.if-tab:hover {
+  color: var(--if-text-secondary);
+}
+
+.if-tab.active {
+  color: var(--if-text);
+  border-bottom-color: var(--if-accent);
+}
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  .if-sidebar { width: 72px; padding: 16px; }
+  .if-sidebar-logo h1 { display: none; }
+  .if-sidebar-logo .if-logo-sub { display: none; }
+  .if-nav-item span { display: none; }
+  .if-dashboard { flex-direction: column; }
+  .if-col-right { max-width: 100%; }
+  .if-header h2 { font-size: 28px; }
+  .if-policy-grid { grid-template-columns: 1fr; }
+}

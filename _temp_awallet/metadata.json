@@ -1,0 +1,7 @@
+{
+  "name": "AWallet",
+  "description": "A consent-only interface for agentic wallets. Captures intent without exposing financial complexity.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

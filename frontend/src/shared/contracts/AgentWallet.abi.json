@@ -1,0 +1,5 @@
+[
+	{ "inputs": [ { "internalType": "address", "name": "_owner", "type": "address" }, { "internalType": "address", "name": "_policyGuard", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" },
+	{ "anonymous": false, "inputs": [ { "indexed": true, "internalType": "uint256", "name": "txId", "type": "uint256" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "string", "name": "purpose", "type": "string" } ], "name": "PaymentExecuted", "type": "event" },
+	{ "inputs": [ { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }, { "internalType": "address", "name": "_token", "type": "address" }, { "internalType": "string", "name": "_purpose", "type": "string" }, { "internalType": "string", "name": "_memo", "type": "string" } ], "name": "executePayment", "outputs": [ { "internalType": "uint256", "name": "txId", "type": "uint256" } ], "stateMutability": "nonpayable", "type": "function" }
+]

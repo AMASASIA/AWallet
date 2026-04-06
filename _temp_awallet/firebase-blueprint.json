@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User's identity and wallet information.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User's email" },
+        "displayName": { "type": "string", "description": "User's display name" },
+        "photoURL": { "type": "string", "description": "User's profile picture" },
+        "did": { "type": "string", "description": "Decentralized Identifier" },
+        "soulPoints": { "type": "number", "description": "User's Soul Points" },
+        "pluralityScore": { "type": "number", "description": "User's Plurality Score" },
+        "stamps": { "type": "number", "description": "Number of stamps earned" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation date" }
+      },
+      "required": ["uid", "email"]
+    },
+    "SpendingPolicy": {
+      "title": "SpendingPolicy",
+      "description": "User's spending limits and policies.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Owner UID" },
+        "maxPerTx": { "type": "string", "description": "Maximum amount per transaction" },
+        "dailyLimit": { "type": "string", "description": "Maximum daily spending limit" },
+        "spentToday": { "type": "string", "description": "Amount spent today" },
+        "categories": { "type": "array", "items": { "type": "string" }, "description": "Allowed categories" }
+      },
+      "required": ["uid", "dailyLimit"]
+    },
+    "AgenticTask": {
+      "title": "AgenticTask",
+      "description": "A task proposed by an agent for user approval.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Owner UID" },
+        "title": { "type": "string", "description": "Task title" },
+        "subtitle": { "type": "string", "description": "Task subtitle" },
+        "deadline": { "type": "string", "description": "Task deadline" },
+        "icon": { "type": "string", "description": "Task icon" },
+        "summary": { "type": "string", "description": "Task summary" },
+        "soulReward": { "type": "number", "description": "Soul Points reward" },
+        "status": { "type": "string", "enum": ["pending", "completed", "cancelled"], "description": "Task status" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Task creation date" }
+      },
+      "required": ["uid", "title", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profile documents."
+    },
+    "/policies/{uid}": {
+      "schema": "SpendingPolicy",
+      "description": "User spending policy documents."
+    },
+    "/tasks/{taskId}": {
+      "schema": "AgenticTask",
+      "description": "Agentic task documents."
+    }
+  }
+}
